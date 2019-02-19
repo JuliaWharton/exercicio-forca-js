@@ -1,10 +1,79 @@
- body{
-     display: flex;
+ *{
      margin: 0;
  }
+ body{
+    display: grid;
+    grid-template-areas: 'aside main main' 'aside section section' 'footer footer footer';
+    margin: 0;
+}
+aside{
+    grid-area: aside;
+    background-color: blue;
+    width: 30vw;
+    height: 400px;;
+}
+main{
+    grid-area: main;
+    width: 70vw;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+main div{
+    width: 50%;
+    height: 50%;
+    display: flex;
+}
+main div button{
+    height: 45%;
+    border: 1px solid black;
+    border-top-right-radius: 7%;
+    border-bottom-right-radius: 7%;
+}
+.guessBox{
+    height: 40%;
+    width: 80%;
+    text-align: center;
+    color: black;
+    border-top-left-radius: 7%;
+    border-bottom-left-radius: 7%;
+    border: 1px solid black;
+}
+section{
+    grid-area: section;
+    width: 70vw;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
 .letra {
     display: flex;
     align-items: center;
     justify-content: space-around;
     width: 50vw;
 }
+footer{
+    grid-area: footer;
+    width: 100vw;
+    height: 100px;
+    background-color: grey;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+footer div:nth-child(1){
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+}
+footer div:nth-child(1) p{
+    font-size: 1.5rem;
+}
+footer div:nth-child(2){
+    width: 100vw;
+    height: 50%;
+}
+
+

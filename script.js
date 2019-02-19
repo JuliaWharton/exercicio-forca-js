@@ -1,8 +1,17 @@
-let listaPalavras = [[D, E, S, G, R, A, Ç, A,], [D, E, S, P, R, E, Z, O]];
+let listaPalavras = ['DESGRAÇA', 'DESPREZO'];
 
-let palavraGerada = listaPalavras[Math.floor(Math.random()*listaPalavras.length)];
+let palavraGerada = listaPalavras[Math.floor(Math.random()*listaPalavras.length)].split('');
 
-let guess = prompt('Digite uma letra.')
+let array = document.querySelectorAll('.letra');
+let list = document.querySelectorAll('listaDeErros')
 
-palavraGerada = document.querySelectorAll('p');
+const analise = () => {
+    if(palavraGerada.includes(guess)){
+        let index = palavraGerada.indexOf(guess);
+        array[index].innerHTML = guess;
+    }else{
+        list[index].innerHTML = guess;
+    }
+}
 
+let letra = document.querySelector('.guessBox').value
