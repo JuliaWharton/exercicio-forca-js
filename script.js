@@ -1,17 +1,30 @@
 let listaPalavras = ['DESGRAÇA', 'DESPREZO'];
 
 let palavraGerada = listaPalavras[Math.floor(Math.random()*listaPalavras.length)].split('');
+let button = document.querySelector('button'); 
+let array = document.querySelectorAll('.letra p');
+let list = document.querySelectorAll('.listaDeErros p')
+let guess = document.querySelector('input'); 
+let guessValor = '';    
+let index = 0; 
 
-let array = document.querySelectorAll('.letra');
-let list = document.querySelectorAll('listaDeErros')
+const verificarGuess = () => { 
+    guessValor = guess.value; 
+}
+console.log('ok')
 
 const analise = () => {
-    if(palavraGerada.includes(guess)){
-        let index = palavraGerada.indexOf(guess);
-        array[index].innerHTML = guess;
+    verificarGuess(); 
+    if(palavraGerada.includes(guessValor)){
+        index = palavraGerada.indexOf(guessValor);
+        array[index].innerHTML = guessValor;
+        console.log('ok1')
     }else{
-        list[index].innerHTML = guess;
+        list[index].innerHTML = guessValor;
+        console.log('ok2')
     }
 }
 
-let letra = document.querySelector('.guessBox').value
+button.onclick = function(){ 
+    analise(); 
+};

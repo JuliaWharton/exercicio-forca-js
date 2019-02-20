@@ -30,6 +30,7 @@ main div button{
     border: 1px solid black;
     border-top-right-radius: 7%;
     border-bottom-right-radius: 7%;
+    cursor: pointer;
 }
 .guessBox{
     height: 40%;
@@ -74,6 +75,8 @@ footer div:nth-child(1) p{
 footer div:nth-child(2){
     width: 100vw;
     height: 50%;
+    display: flex;
+    justify-content: space-around;
 }
 
 
